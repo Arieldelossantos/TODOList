@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TODOList.Views.TODOsPage">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Add" Command="{Binding AddNewCommand}"/>
+    
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+       <ListView ItemsSource="{Binding TODOData}" ItemSelected="Handle_ItemSelected" SelectedItem="{Binding SelectedTask}">
+         <ListView.ItemTemplate>
+             <DataTemplate>
+                 <TextCell Text="{Binding TaskName}" Detail="{Binding Pending}"/>
+             </DataTemplate>
+        </ListView.ItemTemplate>
+           
+       </ListView>
+    </ContentPage.Content>
+</ContentPage>

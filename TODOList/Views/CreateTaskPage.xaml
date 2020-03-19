@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Visual="Material"
+             x:Class="TODOList.Views.CreateTaskPage">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Cancel" Command="{Binding CancelCommand}"/>     
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="20" Padding="30,0">
+            <Entry Text="{Binding TaskName}" IsReadOnly="{Binding EnabledToComplete}"/>
+            <Button Text="Create Task" Command="{Binding CreateTaskCommand}"/>
+            <Button Text="Complete Task" BackgroundColor="Red" TextColor="White"
+                    IsVisible="{Binding EnabledToComplete}"
+                    Command="{Binding CompleteTaskCommand}"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
